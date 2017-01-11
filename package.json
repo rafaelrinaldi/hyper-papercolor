@@ -1,0 +1,41 @@
+{
+  "name": "hyper-papercolor",
+  "version": "0.1.0",
+  "description": "PaperColor theme for Hyper",
+  "main": "index.js",
+  "keywords": [
+    "colors",
+    "hyper",
+    "hyper-theme",
+    "hyperterm",
+    "hyperterm-theme",
+    "papercolor",
+    "theme",
+    "vim"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelrinaldi/hyper-papercolor.git"
+  },
+  "author": "Rafael Rinaldi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rafaelrinaldi/hyper-papercolor/issues"
+  },
+  "homepage": "https://github.com/rafaelrinaldi/hyper-papercolor#readme",
+  "xo": {
+    "space": true,
+    "esnext": true,
+    "envs": [
+      "node"
+    ],
+    "compact": true
+  },
+  "scripts": {
+    "lint": "xo",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "xo": "^0.17.1"
+  }
+}
