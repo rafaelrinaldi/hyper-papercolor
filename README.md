@@ -2,7 +2,7 @@
 
 > [PaperColor](https://github.com/NLKNguyen/papercolor-theme) theme for Hyper
 
-<img width=1015 src=screenshot.jpg>
+![](screenshot.jpg?raw=true)
 
 ## Install
 
