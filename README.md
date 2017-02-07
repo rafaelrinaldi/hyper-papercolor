@@ -2,11 +2,18 @@
 
 > [PaperColor](https://github.com/NLKNguyen/papercolor-theme) theme for Hyper
 
-![](screenshot.jpg?raw=true)
+<p align=center>
+  <img width=1344 src=screenshot.png>
+</p>
 
 ## Install
 
 Simply add `hyper-papercolor` to the `plugins` list under your `~/.hyper.js` file.
+
+## Features
+
+- Great light theme alternative
+- Do not override user custom settings
 
 ## Related
 

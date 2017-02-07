@@ -1,44 +1,52 @@
 const backgroundColor = '#EEEEEE';
 const foregroundColor = '#444444';
 const cursorColor = 'rgba(31, 188, 210, 0.8)';
-const borderColor = 'transparent';
+const borderColor = 'rgba(0, 0, 0, 0.15)';
 
-const colors = [
-  backgroundColor,
-  '#D70000', // red
-  '#008700', // green
-  '#F8A738', // yellow
-  '#0087AF', // blue
-  '#8700AF', // violet
-  '#00AF5F', // cyan
-  '#BCBCBC', // light gray
-  '#444444', // medium gray
-  '#D70000', // red
-  '#008700', // green
-  '#F8A738', // yellow
-  '#0087AF', // blue
-  '#8700AF', // violet
-  '#00AF5F', // cyan
-  '#FFFFFF', // white
-  foregroundColor
-];
+const colors = {
+  black: foregroundColor,
+  red: '#D70000',
+  green: '#008700',
+  yellow: '#F8A738',
+  blue: '#0087AF',
+  magenta: '#8700AF',
+  cyan: '#00AF5F',
+  white: backgroundColor,
+  lightBlack: '#546386',
+  lightRed: '#E17E85',
+  lightGreen: '#61BA86',
+  lightYellow: '#FFB68E',
+  lightBlue: '#4CB2FF',
+  lightMagenta: '#BE86E3',
+  lightCyan: '#2DCED0',
+  lightWhite: foregroundColor,
+  lightGray: 'rgba(0, 0, 0, 0.075)',
+};
 
 exports.decorateConfig = config => {
   return Object.assign({}, config, {
     foregroundColor,
     backgroundColor,
     borderColor,
-    cursorColor,
     colors,
+    cursorColor: config.cursorColor || cursorColor,
     termCSS: `
       ${config.termCSS || ''}
+
+      ::selection { background: ${colors.lightGray} !important }
     `,
     css: `
       ${config.css || ''}
 
-      .cursor-node { width: 0.325rem !important; }
-      .hyperterm_main { border: none !important; }
-      .tabs_title { color: ${foregroundColor} !important; }
+      .hyper_main { border-color: transparent !important }
+      .tab_textInner, .tabs_title { color: ${foregroundColor} !important }
+      .tab_textInner { opacity: 0.35 !important; }
+      .tab_textActive .tab_textInner { opacity: 1 !important }
+      .tab_icon {
+        color: ${foregroundColor} !important;
+        border-radius: 2px !important;
+      }
+      .tab_icon:hover { background-color: ${colors.lightGray} !important }
     `
   });
 };
