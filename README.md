@@ -15,10 +15,6 @@ Simply add `hyper-papercolor` to the `plugins` list under your `~/.hyper.js` fil
 - Great light theme alternative
 - Do not override user custom settings
 
-## Related
-
-* [hyper-terminal-tabs](https://github.com/rafaelrinaldi/hyper-terminal-tabs) - Brings Terminal.app look and feel to Hyper
-
 ## License
 
 MIT © [Rafael Rinaldi](http://rinaldi.io)
