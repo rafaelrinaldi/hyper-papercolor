@@ -1,3 +1,5 @@
+'use strict';
+
 const backgroundColor = '#EEEEEE';
 const foregroundColor = '#444444';
 const cursorColor = 'rgba(31, 188, 210, 0.8)';
@@ -24,6 +26,11 @@ const colors = {
 };
 
 exports.decorateConfig = config => {
+  let windowControlsCSS;
+  if (config.showWindowControls) {
+    windowControlsCSS = '.list_2902 { margin-left: 0 !important; }';
+  }
+
   return Object.assign({}, config, {
     foregroundColor,
     backgroundColor,
@@ -39,6 +46,16 @@ exports.decorateConfig = config => {
       ${config.css || ''}
 
       .hyper_main { border-color: transparent !important }
+      .header_header, .header_windowHeader {
+        top: 0;
+        left: 0;
+        right: 0;
+        color: ${foregroundColor} !important;
+        background: ${backgroundColor} !important;
+      }
+      .header_shape {
+        color: ${foregroundColor} !important;
+      }
       .tab_textInner, .tabs_title { color: ${foregroundColor} !important }
       .tab_textInner { opacity: 0.35 !important; }
       .tab_textActive .tab_textInner { opacity: 1 !important }
@@ -47,6 +64,7 @@ exports.decorateConfig = config => {
         border-radius: 2px !important;
       }
       .tab_icon:hover { background-color: ${colors.lightGray} !important }
+      ${windowControlsCSS}
     `
   });
 };
